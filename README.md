@@ -1,5 +1,4 @@
 # mongodb
-MongoDB basic knowledge
 
 1.mongoDB基础操作命令
 
