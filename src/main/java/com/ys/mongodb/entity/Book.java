@@ -1,4 +1,4 @@
-package com.ys.mongodb.document;
+package com.ys.mongodb.entity;
 
 /**
  * @author HD

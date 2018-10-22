@@ -31,5 +31,6 @@ dependencies {
     compile group: 'org.mongodb', name: 'mongo-java-driver', version: '3.2.2'
     compile group: 'com.google.guava', name: 'guava', version: '11.0.2'
     compile group: 'commons-beanutils', name: 'commons-beanutils', version: '1.8.3'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: '1.2.5.RELEASE'
 
 }

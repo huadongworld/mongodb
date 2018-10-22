@@ -1,4 +1,4 @@
-package com.ys.mongodb.service;
+package com.ys.mongodb.dao;
 
 import com.google.common.collect.Lists;
 import com.mongodb.MongoClient;
@@ -7,7 +7,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
-import com.ys.mongodb.document.Book;
+import com.ys.mongodb.entity.Book;
 import org.apache.commons.beanutils.BeanUtils;
 import org.bson.Document;
 import org.springframework.stereotype.Service;
@@ -21,7 +21,7 @@ import java.util.List;
  * @date 2018/10/17 9:01
  */
 @Service
-public class MongoService {
+public class BookDaoImpl {
 
     /**
      * 连接MongoDB

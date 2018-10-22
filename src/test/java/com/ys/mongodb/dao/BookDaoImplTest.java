@@ -1,10 +1,7 @@
-package com.ys.mongodb.service;
+package com.ys.mongodb.dao;
 
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-import com.ys.mongodb.document.Book;
+import com.ys.mongodb.entity.Book;
 import org.assertj.core.util.Lists;
-import org.bson.Document;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,32 +11,30 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 /**
  * @author HD
  * @date 2018/10/17 9:04
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MongoServiceTest {
+public class BookDaoImplTest {
 
     @Autowired
-    private MongoService mongoService;
+    private BookDaoImpl bookDaoImpl;
 
     @Test
     public void connectMongoDB() {
-        mongoService.connectMongoDB();
+        bookDaoImpl.connectMongoDB();
     }
 
     @Test
     public void createCollection() {
-        mongoService.createCollection(mongoService.connectMongoDB(), "data0");
+        bookDaoImpl.createCollection(bookDaoImpl.connectMongoDB(), "data0");
     }
 
     @Test
     public void getCollection() {
-        mongoService.getCollection(mongoService.connectMongoDB(), "data0");
+        bookDaoImpl.getCollection(bookDaoImpl.connectMongoDB(), "data0");
     }
 
     @Test
@@ -50,7 +45,7 @@ public class MongoServiceTest {
                 1000,
                 "吴承恩"
         );
-        mongoService.insert(mongoService.getCollection(mongoService.connectMongoDB(), "data0"), book);
+        bookDaoImpl.insert(bookDaoImpl.getCollection(bookDaoImpl.connectMongoDB(), "data0"), book);
     }
 
     @Test
@@ -67,12 +62,12 @@ public class MongoServiceTest {
                 100,
                 "施耐庵"
         );
-        mongoService.insertMany(mongoService.getCollection(mongoService.connectMongoDB(), "data0"), Lists.newArrayList(book, book2));
+        bookDaoImpl.insertMany(bookDaoImpl.getCollection(bookDaoImpl.connectMongoDB(), "data0"), Lists.newArrayList(book, book2));
     }
 
     @Test
     public void find() {
-        List<Book> bookList = mongoService.find(mongoService.getCollection(mongoService.connectMongoDB(), "data0"));
+        List<Book> bookList = bookDaoImpl.find(bookDaoImpl.getCollection(bookDaoImpl.connectMongoDB(), "data0"));
         Assert.assertEquals(2, bookList.size());
     }
 
@@ -85,12 +80,12 @@ public class MongoServiceTest {
                 "吴承恩",
                 "name123"
         );
-        mongoService.updateMany(mongoService.getCollection(mongoService.connectMongoDB(), "data0"), book);
+        bookDaoImpl.updateMany(bookDaoImpl.getCollection(bookDaoImpl.connectMongoDB(), "data0"), book);
     }
 
     @Test
     public void delete() {
-        mongoService.delete(mongoService.getCollection(mongoService.connectMongoDB(), "data0"));
+        bookDaoImpl.delete(bookDaoImpl.getCollection(bookDaoImpl.connectMongoDB(), "data0"));
     }
 
 
