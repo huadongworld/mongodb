@@ -1,5 +1,8 @@
 package com.ys.mongodb.service;
 
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +23,15 @@ public class MongoServiceTest {
     private MongoService mongoService;
 
     @Test
-    public void connectMongo() {
-        mongoService.connectMongo();
+    public void connectMongoDB() {
+
+        //连接服务器
+        MongoDatabase mongoDatabase = mongoService.connectMongoDB();
+        //创建集合
+        mongoService.createCollection(mongoDatabase);
+        //获取集合
+        MongoCollection<Document> documents = mongoService.getCollection(mongoDatabase);
+        //插入文档
+        mongoService.insertMany(documents);
     }
 }

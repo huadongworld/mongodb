@@ -13,6 +13,4 @@ public class MongoController {
 
     @Autowired
     private MongoService mongoService;
-
-
 }
