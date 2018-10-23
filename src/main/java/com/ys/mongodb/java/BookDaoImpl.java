@@ -1,4 +1,4 @@
-package com.ys.mongodb.dao;
+package com.ys.mongodb.java;
 
 import com.google.common.collect.Lists;
 import com.mongodb.MongoClient;

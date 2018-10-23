@@ -1,5 +1,5 @@
 
-# mongo
+# mongo基础操作指令
 
 use mini_program;
 

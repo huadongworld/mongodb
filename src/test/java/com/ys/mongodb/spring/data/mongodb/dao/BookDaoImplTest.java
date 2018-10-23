@@ -1,6 +1,7 @@
-package com.ys.mongodb.dao;
+package com.ys.mongodb.spring.data.mongodb.dao;
 
 import com.ys.mongodb.entity.Book;
+import com.ys.mongodb.java.BookDaoImpl;
 import org.assertj.core.util.Lists;
 import org.junit.Assert;
 import org.junit.Test;

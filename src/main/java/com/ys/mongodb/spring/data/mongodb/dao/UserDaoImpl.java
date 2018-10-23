@@ -1,4 +1,4 @@
-package com.ys.mongodb.dao;
+package com.ys.mongodb.spring.data.mongodb.dao;
 
 import com.ys.mongodb.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * @author HD
  * @date 2018/10/22 18:02
  *
- * SpringBoot-data-mongodb实现(对应测试包有单元测试类)
+ * Spring-data-mongodb实现(对应测试包有单元测试类)
  */
 @Component
 public class UserDaoImpl {

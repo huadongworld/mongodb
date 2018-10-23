@@ -4,7 +4,7 @@
 
 2.Java连接mongoDB，进行基础的增删查改操作
 
-3.SpringBoot-data-mongodb操作mongoDB数据库
+3.spring-data-mongodb操作mongoDB数据库
 
 4.使用gridFsTemplate进行大文件的增删改查
 

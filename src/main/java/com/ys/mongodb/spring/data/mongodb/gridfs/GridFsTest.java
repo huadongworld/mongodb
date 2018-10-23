@@ -1,4 +1,4 @@
-package com.ys.mongodb.gridfs;
+package com.ys.mongodb.spring.data.mongodb.gridfs;
 
 import com.mongodb.client.gridfs.model.GridFSFile;
 import org.springframework.beans.factory.annotation.Autowired;
