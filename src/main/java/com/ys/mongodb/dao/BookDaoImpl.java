@@ -19,6 +19,8 @@ import java.util.List;
 /**
  * @author HD
  * @date 2018/10/17 9:01
+ *
+ * 原生Java实现(对应测试包有单元测试类)
  */
 @Service
 public class BookDaoImpl {
