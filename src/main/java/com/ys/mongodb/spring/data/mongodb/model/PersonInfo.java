@@ -6,6 +6,8 @@ package com.ys.mongodb.spring.data.mongodb.model;
  */
 public class PersonInfo {
 
+    public final static String COLLECTION_NAME = PersonInfo.class.getSimpleName();
+
     private int id;
 
     private String person_name;
@@ -14,6 +16,23 @@ public class PersonInfo {
 
     private String relationship;
 
+    private Address address;
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public PersonInfo(int id, String person_name, String sex, String relationship) {
+        this.id = id;
+        this.person_name = person_name;
+        this.sex = sex;
+        this.relationship = relationship;
+    }
+
     @Override
     public String toString() {
         return "PersonInfo{" +
@@ -21,6 +40,7 @@ public class PersonInfo {
                 ", person_name='" + person_name + '\'' +
                 ", sex='" + sex + '\'' +
                 ", relationship='" + relationship + '\'' +
+                ", address=" + address +
                 '}';
     }
 

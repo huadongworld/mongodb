@@ -3,7 +3,9 @@ package com.ys.mongodb.spring.data.mongodb.config;
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
 import com.mongodb.gridfs.GridFS;
+import com.ys.mongodb.spring.data.mongodb.model.PersonInfo;
 import org.jongo.Jongo;
+import org.jongo.MongoCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,5 +34,11 @@ public class AppConfig {
     @Bean
     public MongoClient mongoClient() {
         return new MongoClient(mongoDbProperties.getHost(), mongoDbProperties.getPort());
+    }
+
+    @Bean
+    public MongoCollection personCollection() {
+        //得到名称为PersonInfo的集合
+        return jongo().getCollection(PersonInfo.COLLECTION_NAME);
     }
 }
