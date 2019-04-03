@@ -1,6 +1,8 @@
 package com.ys.mongodb.spring.data.mongodb.config;
 
 import com.mongodb.MongoClient;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.mongo.MongoProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,16 +16,14 @@ import org.springframework.stereotype.Component;
  */
 @Configuration
 @Component
-@ConfigurationProperties(prefix = "spring.data.mongodb")
 public class GridFsConfig extends AbstractMongoConfiguration {
 
-    private String host;
-
-    private String database;
+    @Autowired
+    private MongoProperties mongoProperties;
 
     @Override
     protected String getDatabaseName() {
-        return database;
+        return getDatabase();
     }
 
     @Bean
@@ -37,18 +37,10 @@ public class GridFsConfig extends AbstractMongoConfiguration {
     }
 
     public String getHost() {
-        return host;
-    }
-
-    public void setHost(String host) {
-        this.host = host;
+        return mongoProperties.getHost();
     }
 
     public String getDatabase() {
-        return database;
-    }
-
-    public void setDatabase(String database) {
-        this.database = database;
+        return mongoProperties.getDatabase();
     }
 }
